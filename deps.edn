@@ -1,0 +1,21 @@
+{:paths ["." "cells" "robotics" "kotoba"]
+ ;; NEW (this repo previously had no deps.edn -- `run_tests.sh` requires the
+ ;; full etzhayyim/root monorepo babashka classpath instead). This is a
+ ;; minimal addition so the cljc cell/robotics namespaces are also runnable
+ ;; standalone via the `clojure` CLI (matching the other etzhayyim actors'
+ ;; deps.edn shape) -- it does NOT replace run_tests.sh/bb, both work.
+ ;; langchain-clj is only needed for cells/site_survey/advisor.cljc's real-LLM
+ ;; wiring (opt-in require, not required by cell.cljc itself).
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}
+        io.github.com-junkawasaki/langchain-clj
+        {:local/root "../../com-junkawasaki/langchain-clj"}
+        org.clojure/data.json {:mvn/version "2.5.1"}}
+ :aliases
+ {:test {:extra-paths ["cells" "robotics"]
+         :extra-deps {io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts ["-m" "cognitect.test-runner"]
+         :exec-fn cognitect.test-runner.api/test}
+  :lint {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2024.11.14"}}
+         :main-opts    ["-m" "clj-kondo.main"
+                        "--lint" "cells" "robotics" "--fail-level" "error"]}}}

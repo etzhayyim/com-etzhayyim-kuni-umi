@@ -1,4 +1,4 @@
-# 20-actors/kuni-umi — CLAUDE rules
+# com-etzhayyim-kuni-umi — repository rules
 
 Tier-B per-domain leader actor for the planetary infrastructure robotics fleet.
 Per [ADR-2605201400](../../90-docs/adr/2605201400-etzhayyim-kuni-umi-planetary-infra-fleet.md).

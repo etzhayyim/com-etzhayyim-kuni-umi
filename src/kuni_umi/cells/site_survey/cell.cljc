@@ -212,11 +212,11 @@
   {:accepted true :rationale "mock advisor: deferring to governor rules" :confidence 1.0})
 
 (defn jurisdiction-eligibility
-  "Run DMN: 20-actors/kuni-umi/dmn/jurisdiction-eligibility.md.
+  "Run DMN: dmn/jurisdiction-eligibility.md.
   Port of `jurisdiction_eligibility` — the ONLY pure node. `deps`'s
   `:llm-primary` (already an anticipated `make-cell-deps` DI field), if
   present, must be a plain fn of `state -> {:accepted bool :rationale str
-  :confidence 0..1}` (see `cells/site_survey/advisor.cljc` for a real
+  :confidence 0..1}` (see `src/kuni_umi/cells/site_survey/advisor.cljc` for a real
   Murakumo-backed implementation — deliberately NOT required by this ns, to
   keep this cell layer dependency-free per its own `no langgraph dependency
   at this layer` convention). Falls back to `mock-advise` when absent. The

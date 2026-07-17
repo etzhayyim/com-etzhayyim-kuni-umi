@@ -11,25 +11,20 @@
   policy judgment layer of ONE pure node. All other cell nodes remain
   NotImplementedError-gated exactly as before.
 
-  `cell.cljc`/`advisor.cljc` are loaded via `load-file`, not `:require` —
-  this repo's `kuni-umi.*` namespace declarations don't match their actual
-  file paths outside the full etzhayyim/root monorepo bb classpath (a
-  pre-existing structural quirk, not introduced here); only external
-  library namespaces (langchain.model, clojure.data.json) resolve normally.
+  The repository-native src layout resolves the actor namespaces directly;
+  no etzhayyim/root classpath or load-file shim is required.
 
-  Usage: clojure -M -e '(load-file \"cells/site_survey/deploy.clj\") (kuni-umi.cells.site-survey.deploy/-main)'
+  Usage: clojure -M -m kuni-umi.cells.site-survey.deploy
   Env:   KUNI_UMI_OLLAMA_URL (default http://127.0.0.1:11434)
          KUNI_UMI_OLLAMA_MODEL (default gemma-4-E4B qat)"
   (:require [clojure.data.json :as json]
             [clojure.string :as str]
+            [kuni-umi.cells.site-survey.advisor]
+            [kuni-umi.cells.site-survey.cell]
             [langchain.model :as model])
   (:import [java.net URI]
            [java.net.http HttpClient HttpRequest HttpRequest$BodyPublishers
             HttpResponse$BodyHandlers]))
-
-(let [dir (.getParent (java.io.File. *file*))]
-  (load-file (str dir "/cell.cljc"))
-  (load-file (str dir "/advisor.cljc")))
 
 (def ^:private default-ollama-url
   (or (System/getenv "KUNI_UMI_OLLAMA_URL") "http://127.0.0.1:11434"))

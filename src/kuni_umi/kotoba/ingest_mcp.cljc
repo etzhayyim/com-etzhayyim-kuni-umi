@@ -12,8 +12,12 @@
 
 #?(:clj
    (def seed-path
-     (str (-> (io/file *file*) .getParentFile .getAbsolutePath)
-          "/seed.edn")))
+     (str (-> (io/file *file*)
+              .getParentFile
+              .getParentFile
+              .getParentFile
+              .getParentFile)
+          "/kotoba/seed.edn")))
 
 (defn strip-comments [^String s]
   (let [sb (StringBuilder.)]

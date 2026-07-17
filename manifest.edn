@@ -11,6 +11,7 @@
  :actor/adr       "2605201400"
  :actor/related   ["2605192415" "2605191559" "2605181100"]
  :actor/resources {:schema "kotoba/schema.edn"
+                   :cell-schema "cells/schema.edn"
                    :seed "kotoba/seed.edn"
                    :cells ["cells/site_survey.edn"
                            "cells/deployment_planning.edn"

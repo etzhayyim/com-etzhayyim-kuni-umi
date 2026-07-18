@@ -1,6 +1,6 @@
 (ns kuni-umi.repository-contract-test
   (:require [clojure.edn :as edn]
-            [clojure.data.json :as json]
+            [cheshire.core :as json]
             [clojure.java.io :as io]
             [clojure.test :refer [deftest is testing]]))
 
@@ -34,7 +34,7 @@
     (is (false? (:canonical legacy)))
     (doseq [name names]
       (let [path (io/file (:path legacy) (str name ".json"))
-            document (json/read-str (slurp path))]
+            document (json/parse-string (slurp path))]
         (is (.isFile path))
         (is (= (str (:namespace legacy) "." name) (get document "id")))
         (is (not (.exists (io/file "lex/apps-etzhayyim-kuniUmi"

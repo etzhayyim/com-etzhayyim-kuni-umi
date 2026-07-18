@@ -1,5 +1,6 @@
 (ns kuni-umi.repository-contract-test
   (:require [clojure.edn :as edn]
+            [clojure.data.json :as json]
             [clojure.java.io :as io]
             [clojure.test :refer [deftest is testing]]))
 
@@ -23,6 +24,21 @@
     (doseq [name names]
       (is (.isFile (io/file "lex/actions" (str name ".edn"))))
       (is (.isFile (io/file "wire/lexicons/kuniUmi" (str name ".json")))))))
+
+(deftest legacy-apps-namespace-is-wire-only
+  (let [names ["commissionDeployment" "defineDeploymentSite"
+               "proposeDeploymentPlan" "recordConstructionProgress"
+               "recordPhysicalAuditEvent" "submitSiteSurvey"]
+        legacy (first (get-in contract [:wire :legacy-compatibility]))]
+    (is (= "com.etzhayyim.apps.etzhayyim.kuniUmi" (:namespace legacy)))
+    (is (false? (:canonical legacy)))
+    (doseq [name names]
+      (let [path (io/file (:path legacy) (str name ".json"))
+            document (json/read-str (slurp path))]
+        (is (.isFile path))
+        (is (= (str (:namespace legacy) "." name) (get document "id")))
+        (is (not (.exists (io/file "lex/apps-etzhayyim-kuniUmi"
+                                   (str name ".edn")))))))))
 
 (deftest exact-flat-west-dependencies
   (let [deps (edn/read-string (slurp "dependencies.edn"))]

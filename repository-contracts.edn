@@ -4,7 +4,13 @@
              :cell-registry "cells"
              :schema ["kotoba/schema.edn" "cells/schema.edn"]}
  :wire {:roots ["wire" ".well-known"]
-        :formats #{:json :jsonld :bpmn}}
+        :formats #{:json :jsonld :bpmn}
+        :canonical-lexicon-namespace "com.etzhayyim.kuniUmi"
+        :legacy-compatibility
+        [{:namespace "com.etzhayyim.apps.etzhayyim.kuniUmi"
+          :path "wire/lexicons/apps-etzhayyim-kuniUmi"
+          :canonical false
+          :reason "live k8s/fleet/ADR consumers during namespace migration"}]}
  :forbidden-root-paths ["manifest.jsonld" "bpmn/kuni-umi-deployment-workflow.bpmn"
                         "robotics/golden/device_loop_trace.json"
                         "robotics/golden/kami_fk_ik_trace.json"]

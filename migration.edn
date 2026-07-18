@@ -12,4 +12,5 @@
  :canonical-formats {:internal :edn
                      :external-wire #{:json :jsonld :bpmn}}
  :central-contract-source "00-contracts/lexicons/com/etzhayyim/kuniUmi"
+ :legacy-wire-source "00-contracts/lexicons/com/etzhayyim/etzhayyim/apps/etzhayyim/kuniUmi"
  :deprecated-runtimes #{:go :tinygo :shell}}

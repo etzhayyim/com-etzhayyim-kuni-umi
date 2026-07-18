@@ -1,0 +1,14 @@
+{:migration/id "kuni-umi-root-alias-consolidation"
+ :canonical-repository "orgs/etzhayyim/com-etzhayyim-kuni-umi"
+ :canonical-actor-id "kuni-umi"
+ :root-aliases
+ [{:path "20-actors/kuni-umi" :disposition :replace-with-moved-stub}
+  {:path "20-actors/kuni_umi" :disposition :replace-with-moved-stub}]
+ :identity-evidence
+ {:manifest-actor-id "kuni-umi"
+  :actor-domain "kuni-umi.etzhayyim.com"
+  :did-namespace "did:web:etzhayyim.com:kuniumi"
+  :root-alias-content :identical-at-migration}
+ :canonical-formats {:internal :edn
+                     :external-wire #{:json :jsonld :bpmn}}
+ :deprecated-runtimes #{:go :tinygo :shell}}

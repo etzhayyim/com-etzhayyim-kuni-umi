@@ -1,5 +1,11 @@
 # kuni-umi (国生み) — Planetary Infrastructure Robotics Fleet Actor
 
+Canonical implementation lives in this west-managed flat repository. Internal
+manifests, schemas, cell descriptors, lexicons, and seeds are EDN; protocol JSON,
+BPMN, and generated robotics traces live under `wire/` (`.well-known/did.json`
+is the DID-Web protocol endpoint). The former `20-actors/kuni-umi` and
+`20-actors/kuni_umi` trees were aliases of this same actor, not separate actors.
+
 **Status**: S0 — spec + lexicon + actor scaffold (no robots dispatched). Apache-2.0 + Charter Rider v2.0.
 
 Per [ADR-2605201400](../../90-docs/adr/2605201400-etzhayyim-kuni-umi-planetary-infra-fleet.md).

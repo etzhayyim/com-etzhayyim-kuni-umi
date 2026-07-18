@@ -5,7 +5,7 @@
 
 (def trace
   (json/parse-string
-   (slurp "robotics/golden/kami_fk_ik_trace.json") true))
+   (slurp "wire/robotics/golden/kami_fk_ik_trace.json") true))
 
 (def arm (k/planar-arm [1.2 1.0]))
 (def tolerance 5.0e-4)

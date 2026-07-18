@@ -107,8 +107,8 @@ def commission_test(state: CommissioningState, deps: CellDeps) -> CommissioningS
     Reuses open-ot reference BFB cells: ANTI_ISLANDING_ROCOF, DROOP_P_F, BLACK_START_SEQ.
     The deterministic acceptance test is robotics/commissioning.run_microgrid_acceptance
     (the open-ot field-tier loop's :representative twin). R1: when the committed
-    device-in-the-loop golden trace (robotics/golden/device_loop_trace.json — the
-    REAL wasm cells under Wasmtime, recorded in robotics/golden/device_loop_trace.json) is present and
+    device-in-the-loop golden trace (wire/robotics/golden/device_loop_trace.json — the
+    REAL wasm cells under Wasmtime, recorded in wire/robotics/golden/device_loop_trace.json) is present and
     consistent, the acceptance tier is recorded as "device-wasm"; absent or
     inconsistent evidence stays "python-twin". Live device-in-the-loop against
     field hardware remains gated behind deps.sdk + the certified safety PLC.

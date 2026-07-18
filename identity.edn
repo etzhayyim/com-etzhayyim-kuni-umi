@@ -1,0 +1,5 @@
+{:repository/id "etzhayyim/com-etzhayyim-kuni-umi"
+ :actor/id "kuni-umi"
+ :actor/domain "kuni-umi.etzhayyim.com"
+ :actor/did-namespace "did:web:etzhayyim.com:kuniumi"
+ :canonical-format :edn}

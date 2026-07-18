@@ -10,6 +10,7 @@
     kuni-umi.cells.site-survey.test-cell
     kuni-umi.cells.social-post.state-machine-test
     kuni-umi.kotoba.ingest-mcp-test
+    kuni-umi.repository-contract-test
     kuni-umi.robotics.kami-parity-test
     kuni-umi.robotics.test-kinematics
     kuni-umi.robotics.test-robotics])

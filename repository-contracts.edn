@@ -1,0 +1,12 @@
+{:canonical {:format :edn
+             :manifest "manifest.edn"
+             :lexicons {:records "lex" :actions "lex/actions"}
+             :cell-registry "cells"
+             :schema ["kotoba/schema.edn" "cells/schema.edn"]}
+ :wire {:roots ["wire" ".well-known"]
+        :formats #{:json :jsonld :bpmn}}
+ :forbidden-root-paths ["manifest.jsonld" "bpmn/kuni-umi-deployment-workflow.bpmn"
+                        "robotics/golden/device_loop_trace.json"
+                        "robotics/golden/kami_fk_ik_trace.json"]
+ :deprecated-runtimes #{:go :tinygo :shell}
+ :legacy-root-aliases ["20-actors/kuni-umi" "20-actors/kuni_umi"]}

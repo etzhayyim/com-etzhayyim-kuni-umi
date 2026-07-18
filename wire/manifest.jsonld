@@ -71,7 +71,7 @@
     "com.etzhayyim.kuniUmi.recordPhysicalAuditEvent",
     "com.etzhayyim.kuniUmi.commissionDeployment"
   ],
-  "bpmn": "bpmn/kuni-umi-deployment-workflow.bpmn",
+  "bpmn": "wire/bpmn/kuni-umi-deployment-workflow.bpmn",
   "dmn": [
     "dmn/jurisdiction-eligibility.md",
     "dmn/counterparty-classification.md",

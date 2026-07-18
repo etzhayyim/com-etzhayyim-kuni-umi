@@ -1,10 +1,8 @@
 {:paths ["src"]
  :deps {org.clojure/clojure {:mvn/version "1.12.0"}
         org.clojure/data.json {:mvn/version "2.5.1"}
-        io.github.com-junkawasaki/langchain-clj
-        {:git/url "https://github.com/com-junkawasaki/langchain-clj.git"
-         :git/sha "cda206ea2cbe709e134cb7198f85f0eae1993c96"}
+        io.github.kotoba-lang/langchain
+        {:local/root "../../kotoba-lang/langchain"}
         com.etzhayyim/social-publication
-        {:git/url "https://github.com/etzhayyim/com-etzhayyim-social-publication.git"
-         :git/sha "e8127d0661284b1c12ce1b216c84b5ed2db619ab"}}
+        {:local/root "../com-etzhayyim-social-publication"}}
  :aliases {:test {:extra-paths ["test"]}}}

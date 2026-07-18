@@ -1,0 +1,10 @@
+{:west/project "orgs/etzhayyim/com-etzhayyim-kuni-umi"
+ :root {:path "root"
+        :revision "ae6832f7ed09147a18b0416de18b44b00c95562a"}
+ :dependencies
+ [{:name "langchain"
+   :path "orgs/kotoba-lang/langchain"
+   :revision "cda206ea2cbe709e134cb7198f85f0eae1993c96"}
+  {:name "com-etzhayyim-social-publication"
+   :path "orgs/etzhayyim/com-etzhayyim-social-publication"
+   :revision "e8127d0661284b1c12ce1b216c84b5ed2db619ab"}]}

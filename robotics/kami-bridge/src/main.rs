@@ -18,7 +18,7 @@
 //! Deterministic: fixed sample grids, no RNG, no time. Regenerate with:
 //!
 //!   cargo run --manifest-path robotics/kami-bridge/Cargo.toml \
-//!     --release > robotics/golden/kami_fk_ik_trace.json
+//!     --release > wire/robotics/golden/kami_fk_ik_trace.json
 
 use glam::Vec3;
 use kami_articulated::JointKind;
